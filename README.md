@@ -34,3 +34,16 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+
+
+
+
+<!-- 
+    Project starterd 3-Dec-23 01:53
+        The main intent is to gain a lot of experience in Web dev with next.js 
+        by building alot of web based games with the next.js framework
+
+        This is going to be a site where you can play some simple web based games 
+  -->

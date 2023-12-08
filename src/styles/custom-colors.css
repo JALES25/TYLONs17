@@ -1,0 +1,21 @@
+:root {
+    --primary: #202225;
+    --secondary: #00ADB5;
+    --custom-color: hsl(200, 100%, 75%);
+    --gray-900: #202225;
+    --gray-800: #2f3136;
+    --gray-700: #36393f;
+    --gray-600: #4f545c;
+    --gray-400: #d4d7dc;
+    --gray-300: #e3e5e8;
+    --gray-200: #ebedef;
+    --gray-100: #f2f3f5;
+    --main-prima: #000000;
+    --main-seco0: #150050;
+    --main-seco1: #3F0071;
+    --side0: blue;
+    --side1: rgb(4, 4, 146);
+    --side2: #0141ff;
+    --sideb:  #FB2576;
+  }
+  

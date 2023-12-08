@@ -1,6 +1,47 @@
+/* Import custom colors */
+@import "@/styles/custom-colors.css";
+
+/* Import Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+  .sidebar-icon {
+    @apply relative flex items-center justify-center
+            h-12 w-12 mt-2 mb-2 mx-auto
+            bg-gray-800 text-blue-500
+            hover:bg-blue-700 hover:text-white
+            rounded-3xl hover:rounded-xl
+            transition-all duration-300 ease-linear
+            cursor-pointer;
+  }
+  .sidebar-tooltip {
+    @apply absolute w-auto p-2 m-2 min-w-max left-14
+      rounded-md shadow-md
+      text-white bg-gray-900
+      text-xs font-bold
+      transition-all duration-100 scale-0 origin-left;
+  }
+
+  .hangman-btn {
+    @apply w-full border-[3px] border-white bg-transparent aspect-square text-[2.5rem] uppercase p-2 font-bold cursor-pointer;  
+  }
+
+  .btn-active {
+    @apply active:bg-green-600;
+  }
+
+  .btn-inactive {
+    @apply opacity-[.3];
+  }
+  
+  .btn-hovered-focused {
+    @apply hover:bg-teal-500 focus:bg-cyan-600 focus:rounded-lg focus:border-none hover:text-black  hover:rounded-full;
+  }
+} 
+
 
 :root {
   --foreground-rgb: 0, 0, 0;
