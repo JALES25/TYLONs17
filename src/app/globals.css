@@ -1,5 +1,8 @@
 /* Import custom colors */
 @import "@/styles/custom-colors.css";
+@import "@/styles/RainThunder.css";
+@import "@/styles/AnimatedRight.css";
+@import "@/styles/ProjectsCard.css";
 
 /* Import Tailwind CSS */
 @tailwind base;
@@ -18,9 +21,9 @@
             cursor-pointer;
   }
   .sidebar-tooltip {
-    @apply absolute w-auto p-2 m-2 min-w-max left-14
+    @apply absolute w-auto p-2 m-2 min-w-max left-[-50%] top-[-50%] z-50
       rounded-md shadow-md
-      text-white bg-gray-900
+      text-white bg-gray-900 bg-opacity-70 border-blue-700 border-2
       text-xs font-bold
       transition-all duration-100 scale-0 origin-left;
   }
@@ -40,6 +43,11 @@
   .btn-hovered-focused {
     @apply hover:bg-teal-500 focus:bg-cyan-600 focus:rounded-lg focus:border-none hover:text-black  hover:rounded-full;
   }
+
+  .login-input {
+    @apply w-[400px] border border-blue-600 py-2 px-6 bg-zinc-100/40 rounded-md;
+  }
+
 } 
 
 
@@ -65,4 +73,22 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+
+
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* IE and Edge */
+* {
+  -ms-overflow-style: none;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: none;
 }

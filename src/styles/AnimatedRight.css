@@ -1,0 +1,35 @@
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(5px);
+  }
+}
+
+.cta-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.arrow-container {
+  display: inline-block;
+}
+
+.arrow {
+  font-size: 24px;
+  color: #fff;
+  animation: bounce 1s infinite;
+}
+
+.cta-text {
+  margin-left: 10px;
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+}

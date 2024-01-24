@@ -2,7 +2,7 @@
 
 export default function Footer() {
   return (
-    <footer className="ml-20 bg-neutral-100 text-center text-neutral-600 dark:bg-gray-900 dark:text-neutral-200 lg:text-left">
+    <footer className="ml-20 bg-neutral-100 text-center text-neutral-600 dark:bg-gray-900 dark:text-neutral-200 lg:text-left ">
         <div className="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-blue-900 lg:justify-center">
             <div className="text-4xl mr-12 hidden lg:block">
                 <span>Find me on:</span>
@@ -90,7 +90,7 @@ export default function Footer() {
                     </svg>
                     TYLONs17
                 </h6>
-                <em>
+                <em className="hidden text-blue-600">
                     "Blood of a champion &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|| T's givin shiii <br />
                      Broke all my promises&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|| I'm running still <br />
                      TYLONs th 1 yu want &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|| h's coming soon <br />

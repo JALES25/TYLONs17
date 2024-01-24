@@ -68,11 +68,11 @@ export default function Hangman() {
     
 
   return (
-    <div className="flex flex-col items-center max-w-4xl gap-8 m-auto">
+    <div className="flex flex-col items-center max-w-4xl max-h-[100vh] gap-8 m-auto">
       <h1>Hangman</h1>
       <h4>Guess the letters in the secret word to solve the puzzle.</h4>
       <div className="text-2xl text-center">
-        {iswinner && "CONGRATULATIONS!!! You Survived the nignt.  Press Enter TO TRY AGAIN"} 
+        {iswinner && "CONGRATULATIONS!!! You Survived the nignt.  Press Enter TO PLAY AGAIN"} 
         {isLooser && "OH NO!!! You couldn't make it in time.  Press Enter TO TRY AGAIN"} 
       </div>
       <HangmanDrawing numberOfGuesses={incorrectLetters.length} />

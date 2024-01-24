@@ -1,0 +1,86 @@
+/* src/components/RainThunder.css */
+
+@keyframes rain {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes thunder {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* @keyframes lightning {
+  0% {
+    transform: scaleY(0);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+} */
+  
+.rain-thunder-container {
+  position: fixed;
+  top: 50;
+  left: 50;
+  width: 89vw;
+  height: 80vh;
+  overflow: hidden;
+  background: linear-gradient(180deg, #000, #111);
+  z-index: -10;
+}
+  
+.raindrop {
+  position: absolute;
+  width: 2px;
+  height: 10px;
+  background: #0af;
+  animation: rain 5s linear infinite;
+  z-index: 99;
+}
+
+/* .thunder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: 0;
+  animation: thunder 20s linear infinite;
+} */
+
+/* .lightning {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: #fff;
+  transform-origin: top;
+  animation: lightning 1s linear infinite;
+} */
+
+
+
+
+@keyframes glowing {
+  0% { box-shadow: 0 0 0px #00f, 0 0 0px #00f, 0 0 0px #00f, 0 0 0px #00f; }
+  10% { box-shadow: 0 0 2.5px #00f, 0 0 5px #00f, 0 0 7.5px #00f, 0 0 10px #00f; }
+  25% { box-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 15px #00f, 0 0 20px #00f; }
+  50% { box-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f; }
+  100% { box-shadow: 0 0 5px #00f, 0 0 10px #00f, 0 0 15px #00f, 0 0 20px #00f; }
+}
+
+.glowing-effect {
+  animation: glowing 1s infinite;
+}
+  

@@ -40,10 +40,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 
 
-<!-- 
-    Project starterd 3-Dec-23 01:53
-        The main intent is to gain a lot of experience in Web dev with next.js 
-        by building alot of web based games with the next.js framework
+    <!-- 
+        Project starterd 3-Dec-23 01:53
+            The main intent is to gain a lot of experience in Web dev with next.js 
+            by building alot of web based games with the next.js framework
 
-        This is going to be a site where you can play some simple web based games 
-  -->
+            This is going to be a site where you can play some simple web based games 
+    -->

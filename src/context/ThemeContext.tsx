@@ -1,5 +1,6 @@
 "use client"
-import { createContext, useReducer } from "react"
+
+import { createContext, useEffect, useReducer } from "react"
 
 type StateType = {
     theme: string,
@@ -14,16 +15,20 @@ type SizeActionType = {
     type: "CHANGE_FONTSIZE",
     payload: number,
 }
+type SetThemeActionType = {
+    type: "SET_THEME",
+    theme: string,
+  }
 //
 
-type ActionType = ColorActionType | SizeActionType;
+type ActionType = ColorActionType | SizeActionType | SetThemeActionType
 
 const INITIAL_STATE = {
     theme: "dark",
     fontSize: 16,
 }
 
-export const ThemeContext = createContext<{ state: StateType; dispatch: React.Dispatch<ActionType>; }> ({
+export const ThemeContext = createContext<{ state: StateType; dispatch: React.Dispatch<ActionType> }> ({
     state: INITIAL_STATE,
     dispatch: () => {},
 })
@@ -42,6 +47,12 @@ const reducer = (state: StateType, action: ActionType) => {
                 fontSize: action.payload,
             } 
 
+        case "SET_THEME":
+            return {
+                ...state,
+                theme: action.theme,
+            }
+
         default: 
             return state
     }
@@ -50,6 +61,15 @@ const reducer = (state: StateType, action: ActionType) => {
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     const [state, dispatch] = useReducer(reducer, INITIAL_STATE)
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+          const savedTheme = localStorage.getItem('theme')
+          if (savedTheme) {
+            dispatch({ type: 'SET_THEME', theme: savedTheme })
+          }
+        }
+      }, [])
 
     return (
         <ThemeContext.Provider value={{ state, dispatch}}>

@@ -25,6 +25,9 @@ const config: Config = {
           100: '#f2f3f5',
         },
       },
+      textShadow: {
+        '1px-1px-2px-rgba-0-0-0-0-2': '1px 1px 2px rgba(0, 0, 0, 0.2)',
+      },  
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -32,6 +35,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }
 export default config

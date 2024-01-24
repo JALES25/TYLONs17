@@ -4,7 +4,7 @@ export default function Logo() {
   return (
     <div>
         <div className="flex items-center font-bold text-blue-700">
-            <div className="svg-icon">
+            <div className="svg-icon cursor-auto">
                 <svg id="logo" xmlns="http://www.w3.org/2000/svg" width="100" height="90" viewBox="0 0 300.000000 300.000000" preserveAspectRatio="xMidYMid meet">  
                     <title>Logo</title>
             
@@ -26,7 +26,7 @@ export default function Logo() {
             
                 </svg> 
             </div>
-            <span className="text-4xl">TYLONs17&trade;</span>
+            <span className="text-4xl active:text-cyan-600 hover:opacity-75  hover:text-shadow-md hover:text-shadow-blue-500 ">TYLONs17&trade;</span>
         </div>
     </div>
   )
