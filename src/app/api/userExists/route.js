@@ -1,5 +1,5 @@
-import { connectMongoDB } from '@/libs/mongoDB'
-import User from '@/models/User'
+import { connectMongoDB } from '@/libs/mongodb'
+import User from '@/models/db/user'
 import { NextResponse } from 'next/server'
 
 export default async function POST(req) {
