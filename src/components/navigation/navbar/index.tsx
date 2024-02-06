@@ -60,42 +60,44 @@ export default function Navbar({ toggle }: { toggle: () => void }) {
 
   return (
     <nav>
-      <div className={`z-10 w-full h-20 sticky top-0  ${state.theme === 'dark' ? 'bg-primary' : 'bg-gray-400'}`}>
+      <div className={`z-10 w-full h-20 sticky top-0 bg-opacity-95  ${state.theme === 'dark' ? 'bg-primary' : 'bg-gray-400'} `}>
         <div className="container mx-auto px-4 h-full">
           <div className="flex justify-between items-center h-full">
             <Logo />
             <ul className={`hidden md:flex gap-x-6 text-2xl ${state.theme === 'dark' ? 'text-white' : 'text-primary' }`}>
               <li>
-                <Link className="hover:text-blue-700 active:text-cyan-400" href="/about">
+                <Link className="hover:text-blue-700 active:text-cyan-400 custom-text-shadow " href="/about">
                   <p>About</p>
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-blue-700 active:text-cyan-400" href="/games">
+                <Link className="hover:text-blue-700 active:text-cyan-400 custom-text-shadow " href="/games">
                   <p>Games</p>
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-blue-700 active:text-cyan-400" href="/music">
+                <Link className="hover:text-blue-700 active:text-cyan-400 custom-text-shadow " href="/music">
                   <p>Music</p>
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-blue-700 active:text-cyan-400" href="/blogs">
+                <Link className="hover:text-blue-700 active:text-cyan-400 custom-text-shadow " href="/blogs">
                   <p>Blogs</p>
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-blue-700 active:text-cyan-400" href="/contact">
+                <Link className="hover:text-blue-700 active:text-cyan-400 custom-text-shadow " href="/contact">
                   <p>Contact</p>
                 </Link>
               </li>
             </ul>
 
-            <div className={`border-2 rounded-full ${state.theme === 'dark' ? 'border-blue-400' : 'border-blue-600' }`}>
+            {/* /Theme Button/ */}
+            {/* <div className={`border-2 rounded-full ${state.theme === 'dark' ? 'border-blue-400' : 'border-blue-600' }`}>
               <button onClick={toggleTheme} className="hover:text-blue-500 hover:bg-slate-600 bg-gray-700 rounded-full p-2 active:opacity-30">Theme</button>
               
-            </div>
+            </div> */}
+            {/* /End Theme Button/ */}
 
             {/* <div className="">
               {!session && (

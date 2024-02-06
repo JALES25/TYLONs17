@@ -8,11 +8,16 @@ import '@fortawesome/fontawesome-free/css/all.css'
 import RainThunder from '@/components/theme/RainThunder'
 import AnimatedRight from '@/components/icons/AnimatedRight'
 
+import RippleButton from '@/components/utils/RippleButton'
+import { ThemeContext } from '@/context/ThemeContext'
+import { useContext } from 'react'
+import WaveRipples from '@/components/utils/WaveRipples'
 
 
 
 
 export default function Home() {
+  const { state, dispatch } = useContext(ThemeContext)
 
   function getCV() {
     window.open("/images/CV Dec23-ME.pdf", '_blank')
@@ -21,6 +26,14 @@ export default function Home() {
     window.open("/about#projects", '_blank')
   }
 
+  function showMyself() {
+    window.open("/about", '_blank')
+  }
+  
+
+  function doNothing(): void {
+    console.log("I did nothing")
+  }
 
   return (
     <main className="flex max-h-screen flex-col items-center justify-between p-10 ">
@@ -33,14 +46,15 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             This here is:
-            <Image
-              src="/images/JALESnotJAQUE.png"
-              alt="JALESnotJAQUE"
-              className="rounded-[2em]"
-              width={100}
-              height={24}
-              priority
-            />
+              <Image
+                src="/images/JALESnotJAQUE.png"
+                alt="JALESnotJAQUE"
+                className="rounded-[2em] do-ripple"
+                width={100}
+                height={24}
+                priority
+              />
+
             {'JALESnotJAQUE'}
           </a>
         </div>
@@ -63,7 +77,7 @@ export default function Home() {
         </h2>
         <hr /><br />
         <p className=" text-4xl">
-          It was made to be a place i could put my skills to use that will also serve as a place to practice and show my other works. <br />
+          It was made to be a place i could put my skills to use, it will also serve as a place to practice and show my other works. <br />
           Do snooop around and see what you could find. 
         </p>
       </div>
@@ -76,8 +90,12 @@ export default function Home() {
         <h4 className="absolute left-[6rem] ">Looking to hire me? </h4>
         <AnimatedRight />
         <div>
-        <button onClick={getCV} className="border-blue-600 border-2 rounded-full m-10 p-4 hover:border-blue-900 hover:text-cyan-400 transition-all ease-linear" id="downloadButton">Download CV</button>
-        <button onClick={showWorks} className="border-blue-600 border-2 rounded-full m-10 p-4 hover:border-blue-900 hover:text-cyan-400 transition-all ease-linear">Checkout My Works</button>
+          <RippleButton onClick={getCV}  id="downloadButton">Download CV</RippleButton>
+          <RippleButton onClick={showWorks} >Checkout My Works</RippleButton>
+
+          <RippleButton onClick={showMyself}>TYLONs</RippleButton>
+          
+          
         </div>
       </div>
       

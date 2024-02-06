@@ -37,15 +37,3 @@ export default function ProjectsCard ({ title, description, imageUrl, linkUrl, l
   )
 }
 
-
-                                // .container .card .content {
-                                //     position: absolute;
-                                //     top: 252px;
-                                //     width: 100%;
-                                //     height: 35px;
-                                //     padding: 0 30px;
-                                //     text-align: center;
-                                //     overflow: hidden;
-                                //     transition: 0.5s;
-                                // }
-

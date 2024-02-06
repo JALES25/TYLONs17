@@ -3,6 +3,8 @@
 @import "@/styles/RainThunder.css";
 @import "@/styles/AnimatedRight.css";
 @import "@/styles/ProjectsCard.css";
+@import "@/styles/custom-ripples.css";
+@import "@/styles/DBackground.css";
 
 /* Import Tailwind CSS */
 @tailwind base;
@@ -14,8 +16,7 @@
   .sidebar-icon {
     @apply relative flex items-center justify-center
             h-12 w-12 mt-2 mb-2 mx-auto
-            bg-gray-800 text-blue-500
-            hover:bg-blue-700 hover:text-white
+            bg-gray-800 text-blue-500 hover:bg-blue-700 hover:text-white active:bg-blue-300
             rounded-3xl hover:rounded-xl
             transition-all duration-300 ease-linear
             cursor-pointer;
@@ -76,9 +77,12 @@ body {
 }
 
 
+.custom-text-shadow {
+  text-shadow: 0 8px 10px rgba(66, 153, 225, 0.8); /* blue-300 */
+}
 
 
-/* Chrome, Edge, and Safari */
+Chrome, Edge, and Safari
 *::-webkit-scrollbar {
   display: none;
 }

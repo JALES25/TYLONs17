@@ -8,7 +8,7 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  // darkMode: 'false', //do darkMode recon
+  // darkMode: 'class', //do darkMode recon
   theme: {
     extend: {
       colors: {

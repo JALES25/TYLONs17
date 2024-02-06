@@ -35,10 +35,10 @@ export default function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps)
   return (
     <div className="relative">
         {BODY_PARTS.slice(0, numberOfGuesses)}
-        <div className="h-[50px] w-[10px] bg-white absolute top-0 right-0"/>
-        <div className="h-[10px] w-[200px] bg-white ml-[120px]"/>
-        <div className="h-[800px] w-[10px] bg-white ml-[120px]"/>
-        <div className="h-[10px] w-[250px] bg-white " />
+        <div className="h-[3em] w-[0.6em] bg-white absolute top-0 right-0"/>
+        <div className="h-[0.6em] w-[12em] bg-white ml-[7em]"/>
+        <div className="h-[28em] w-[0.6em] bg-white ml-[7em]"/>
+        <div className="h-[0.6em] w-[15em] bg-white " />
     </div>
   )
 }

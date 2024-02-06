@@ -1,38 +1,34 @@
-import { MongoClient } from 'mongodb'
+import mongoose, { Schema, models} from 'mongoose'
 import bcrypt from 'bcrypt'
 
-export async function verifyPassword(email, password) {
-  const client = await MongoClient.connect(process.env.MONGODB_URI)
-  const db = client.db()
+const UserSchema = new mongoose.Schema({
+  userName: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+}, {
+  timestamps: true,
+})
 
-  const user = await db.collection('users').findOne({ email: email })
-  if (!user) {
-    return null
+UserSchema.pre('save', async function(next) {
+  if (this.isModified('password')) {
+    this.password = await bcrypt.hash(this.password, 12)
   }
+  next()
+})
 
-  const isValid = await bcrypt.compare(password, user.password)
-  if (!isValid) {
-    return null
-  }
-
-  return { email: user.email }
+UserSchema.methods.verifyPassword = async function(password) {
+  return await bcrypt.compare(password, this.password)
 }
 
-export async function insertNewUser(email, password) {
-  const client = await MongoClient.connect(process.env.MONGODB_URI)
-  const db = client.db()
-
-  const existingUser = await db.collection('users').findOne({ email: email })
-  if (existingUser) {
-    return null
-  }
-
-  const hashedPassword = await bcrypt.hash(password, 12)
-
-  const result = await db.collection('users').insertOne({
-    email: email,
-    password: hashedPassword,
-  })
-
-  return { email: result.ops[0].email }
-}
+const User = mongoose.models.User || mongoose.model('User', UserSchema)
+export default User

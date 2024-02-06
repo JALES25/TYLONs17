@@ -81,7 +81,7 @@ export default function Contact() {
 
           <hr className="border-t  border-blue-700 border-opacity-60"/>
 
-          <div className="copyright p-4 text-center font-bold text-[1.2em] text-blue-500 tracking-wider">&copy; 2023 TYLONs17&trade;</div>
+          <div className="copyright p-4 text-center font-bold text-[1.2em] text-blue-600 tracking-wider ">&copy; 2023 TYLONs17&trade;</div>
         </div>
       </div>
 

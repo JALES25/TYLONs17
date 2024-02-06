@@ -68,22 +68,33 @@ export default function Hangman() {
     
 
   return (
-    <div className="flex flex-col items-center max-w-4xl max-h-[100vh] gap-8 m-auto">
+    <div className="flex flex-col items-center max-w-4xl max-h-[100vh] m-auto">
       <h1>Hangman</h1>
       <h4>Guess the letters in the secret word to solve the puzzle.</h4>
       <div className="text-2xl text-center">
         {iswinner && "CONGRATULATIONS!!! You Survived the nignt.  Press Enter TO PLAY AGAIN"} 
         {isLooser && "OH NO!!! You couldn't make it in time.  Press Enter TO TRY AGAIN"} 
       </div>
-      <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
-      <HangmanWord guessedLetters={guessedLetters} wordToGuess={wordToGuess} reveal={isLooser} />
-      <div style={{ alignSelf: "stretch"}}>
-        <Keyboard 
-          activeLetters={guessedLetters.filter(letter => wordToGuess.includes(letter))}
-          inactiveLetters={incorrectLetters}
-          addGuessedLetter={addGuessedLetter}
-          disabled={iswinner || isLooser}
-        />
+
+      <div className="max-h-[80vh] w-[90vw] flex flex-col  gap-1 ">
+      
+        <div className="flex justify-around ">
+          <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
+          <div className="flex flex-col flex-wrap gap-2">
+            <HangmanWord guessedLetters={guessedLetters} wordToGuess={wordToGuess} reveal={isLooser} />
+            <div className="w-[44em] " style={{ alignSelf: "stretch"}}>
+              <Keyboard 
+                  activeLetters={guessedLetters.filter(letter => wordToGuess.includes(letter))}
+                  inactiveLetters={incorrectLetters}
+                  addGuessedLetter={addGuessedLetter}
+                  disabled={iswinner || isLooser}
+                />
+            </div>
+          </div>
+        </div>
+
+        
+        
       </div>
     </div>
   )

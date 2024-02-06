@@ -50,7 +50,7 @@ export default function Chatbox() {
                                 Your Name
                             </label>
                             <input
-                                className="w-full rounded-md border border-[#e0e0e0] bg-gray-400 py-3 px-6 text-base font-medium text-blue-900 outline-none focus:bg-gray-200 focus:border-blue-900 focus:shadow-md"
+                                className="w-full rounded-md border border-[#e0e0e0] bg-gray-500 py-3 px-6 text-base font-medium text-blue-900 outline-none focus:bg-gray-200 focus:border-blue-900 focus:shadow-md"
                                 type="text"
                                 name="name"
                                 id="name"
@@ -66,7 +66,7 @@ export default function Chatbox() {
                                 name="email"
                                 id="email"
                                 placeholder="example@domain.com"
-                                className="w-full rounded-md border border-[#e0e0e0] bg-gray-400 py-3 px-6 text-base font-medium text-blue-900 outline-none focus:bg-gray-200 focus:border-blue-900 focus:shadow-md"
+                                className="w-full rounded-md border border-[#e0e0e0] bg-gray-500 py-3 px-6 text-base font-medium text-blue-900 outline-none focus:bg-gray-200 focus:border-blue-900 focus:shadow-md"
                             />
                         </div>
 
@@ -79,7 +79,7 @@ export default function Chatbox() {
                                 name="message"
                                 id="message"
                                 placeholder="Explain your queries"
-                                className="w-full resize-none rounded-md border border-[#e0e0e0] bg-gray-400 py-3 px-6 text-base font-medium text-blue-900 outline-none focus:bg-gray-200 focus:border-blue-900 focus:shadow-md">
+                                className="w-full resize-none rounded-md border border-[#e0e0e0] bg-gray-500 py-3 px-6 text-base font-medium text-blue-900 outline-none focus:bg-gray-200 focus:border-blue-900 focus:shadow-md">
                             </textarea>
                         </div>
                         <div>
@@ -90,7 +90,7 @@ export default function Chatbox() {
                     </form>
                 </div>
                 <div className="mx-auto mt-12 flex max-w-[400px] max-h-[450px] items-center justify-end space-x-5">
-                    <button className="flex h-[70px] w-[70px] items-center justify-center rounded-full bg-blue-900 text-white" onClick={chatboxToggleHandler}>
+                    <button className="flex h-[70px] w-[70px] items-center justify-center rounded-full bg-blue-900 hover:bg-blue-700 text-white" onClick={chatboxToggleHandler}>
                         <span ref={crossIconRef} className="cross-icon hidden">
                             <svg
                                 width="17"
