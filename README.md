@@ -47,3 +47,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
             This is going to be a site where you can play some simple web based games 
     -->
+
+
+    ![This is how the landing page looks like](image.png)
