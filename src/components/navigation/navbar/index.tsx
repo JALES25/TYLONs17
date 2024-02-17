@@ -5,7 +5,9 @@ import Link from 'next/link'
 // import Button from './Button'
 
 import { ThemeContext } from "@/context/ThemeContext"
-import React, { useContext, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
+import { usePathname } from 'next/navigation'
+
 
 import { signIn, signOut, useSession } from 'next-auth/react'
 import Modal from "@/components/utils/Modal"
@@ -16,7 +18,10 @@ import { Session, getServerSession } from 'next-auth'
 
 
 export default function Navbar({ toggle }: { toggle: () => void }) {
-  const { state, dispatch} = useContext(ThemeContext)
+  const { state, dispatch } = useContext(ThemeContext)
+  const { currentPage } = state
+
+  // const router = useRouter()
 
   const toggleTheme = () => {
     dispatch( { type: 'CHANGE_THEME' })
@@ -25,6 +30,12 @@ export default function Navbar({ toggle }: { toggle: () => void }) {
       localStorage.setItem('theme', newTheme)
     }
   }
+
+  const pathname = usePathname()
+
+  useEffect(() => {
+      dispatch({ type: 'SET_CURRENT_PAGE', currentPage: pathname })
+  }, [pathname])
 
   // // Authentication
   // // const session = await getServerSession(options)
@@ -66,27 +77,28 @@ export default function Navbar({ toggle }: { toggle: () => void }) {
             <Logo />
             <ul className={`hidden md:flex gap-x-6 text-2xl ${state.theme === 'dark' ? 'text-white' : 'text-primary' }`}>
               <li>
-                <Link className="hover:text-blue-700 active:text-cyan-400 custom-text-shadow " href="/about">
+              {/* ${router.pathname === "/contact" ? "bg-blue-600 bg-opacity-70" : "" } */}
+                <Link className={`hover:text-blue-700 active:text-cyan-400 custom-text-shadow  ${currentPage === "/about" ? "text-blue-400 font-semibold  " : " opacity-90 hover:opacity-100" } `} href="/about">
                   <p>About</p>
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-blue-700 active:text-cyan-400 custom-text-shadow " href="/games">
+                <Link className={`hover:text-blue-700 active:text-cyan-400 custom-text-shadow  ${currentPage === "/games" ? "text-blue-400 font-semibold  " : " opacity-90 hover:opacity-100" } `} href="/games">
                   <p>Games</p>
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-blue-700 active:text-cyan-400 custom-text-shadow " href="/music">
+                <Link className={`hover:text-blue-700 active:text-cyan-400 custom-text-shadow  ${currentPage === "/music" ? "text-blue-400 font-semibold  " : " opacity-90 hover:opacity-100" } `} href="/music">
                   <p>Music</p>
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-blue-700 active:text-cyan-400 custom-text-shadow " href="/blogs">
+                <Link className={`hover:text-blue-700 active:text-cyan-400 custom-text-shadow  ${currentPage === "/blogs" ? "text-blue-400 font-semibold  " : " opacity-90 hover:opacity-100" } `} href="/blogs">
                   <p>Blogs</p>
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-blue-700 active:text-cyan-400 custom-text-shadow " href="/contact">
+                <Link className={`hover:text-blue-700 active:text-cyan-400 custom-text-shadow  ${currentPage === "/contact" ? "text-blue-400 font-semibold  " : " opacity-90 hover:opacity-100" } `} href="/contact">
                   <p>Contact</p>
                 </Link>
               </li>

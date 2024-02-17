@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 import { MongoClient } from 'mongodb'
 
 
-export async function connectToMongoDB() {
+export default async function connectToMongoDB() {
     const uri = process.env.MONGODB_URI
     const client = new MongoClient(uri ?? '')
 
@@ -25,4 +25,4 @@ export async function connectToMongoDB() {
     }
 }
 
-connectToMongoDB()
+// connectToMongoDB()
