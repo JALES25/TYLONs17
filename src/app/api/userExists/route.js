@@ -1,8 +1,7 @@
 import { connectToMongoDB } from '@/libs/mongodb'
 import Usermodel from '@/models/db/user'
-import { NextResponse } from 'next/server'
 
-export default async function handler(req) {
+export default async function(req, res) {
     try {
         await connectToMongoDB()
 
@@ -10,9 +9,10 @@ export default async function handler(req) {
         const userExists = await Usermodel.findOne({ email }).select("_id")
         console.log("user: ",userExists)
 
-        return NextResponse.json({ userExists })
+        res.status(200).json({ userExists })
 
     } catch (error) {
         console.log(error)
+        res.status(500).json({ error: 'An error occurred.' })
     }
 }
