@@ -20,8 +20,7 @@ import { Session, getServerSession } from 'next-auth'
 export default function Navbar({ toggle }: { toggle: () => void }) {
   const { state, dispatch } = useContext(ThemeContext)
   const { currentPage } = state
-
-  // const router = useRouter()
+  
 
   const toggleTheme = () => {
     dispatch( { type: 'CHANGE_THEME' })
@@ -35,7 +34,7 @@ export default function Navbar({ toggle }: { toggle: () => void }) {
 
   useEffect(() => {
       dispatch({ type: 'SET_CURRENT_PAGE', currentPage: pathname })
-  }, [pathname])
+  }, [pathname, dispatch])
 
   // // Authentication
   // // const session = await getServerSession(options)
