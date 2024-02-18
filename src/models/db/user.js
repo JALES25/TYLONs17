@@ -30,5 +30,5 @@ UserSchema.methods.verifyPassword = async function(password) {
   return await bcrypt.compare(password, this.password)
 }
 
-const User = mongoose.models.User || mongoose.model('User', UserSchema)
+const Usermodel = mongoose.models.User || mongoose.model('User', UserSchema)
 export default User
