@@ -1,13 +1,13 @@
-import { connectMongoDB } from '@/libs/mongodb'
-import User from '@/models/db/user'
+import { connectToMongoDB } from '@/libs/mongodb'
+import Usermodel from '@/models/db/user'
 import { NextResponse } from 'next/server'
 
 export default async function POST(req) {
     try {
-        await connectMongoDB()
+        await connectToMongoDB()
 
         const { email } = await req.json()
-        const userExists = await User.findOne({ email }).select("_id")
+        const userExists = await Usermodel.findOne({ email }).select("_id")
         console.log("user: ",userExists)
 
         return NextResponse.json({ userExists })

@@ -31,4 +31,4 @@ UserSchema.methods.verifyPassword = async function(password) {
 }
 
 const Usermodel = mongoose.models.User || mongoose.model('User', UserSchema)
-export default User
+export default Usermodel
