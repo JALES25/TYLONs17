@@ -4,7 +4,7 @@ interface BackgroundProps {
     children: ReactNode;
   }
 
-export default function ({children} : BackgroundProps) {
+export default function DBackground ({children} : BackgroundProps) {
 
 
 

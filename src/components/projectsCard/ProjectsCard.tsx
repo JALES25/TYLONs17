@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react'
+import Image from 'next/image'
 
 interface ProjectsCardProps {
     title: string
@@ -22,7 +23,8 @@ export default function ProjectsCard ({ title, description, imageUrl, linkUrl, l
   return (
       <div className="card relative p-4 my-10 flex flex-col justify-center items-center border-4 border-blue-600 rounded-2xl shadow-lg hover:shadow-blue-800 transition-all duration-700 ease-in-out sm:p-6 md:p-8  w-[350px] h-[300px] hover:h-[400px]">
             <div className="img-box bg-slate-900 absolute top-[20px] w-[300px] h-[220px] rounded-2xl overflow-hidden transition-all duration-700 ease-in-out  ">
-                <img src={imageUrl} alt={title} className="absolute top-0 left-0 w-full h-full object-cover rounded " />
+                {/* <img src={imageUrl} alt={title} className="absolute top-0 left-0 w-full h-full object-cover rounded " /> */}
+                <Image src={imageUrl} alt={title} width={300} height={220} objectFit="cover" loading="lazy" className="absolute top-0 left-0 rounded" />
             </div>
             
             <div className="card-content absolute top-[252px] w-full h-[35px] py-0 px-[30px] text-center overflow-hidden transition-all duration-700 ease-in-out ">

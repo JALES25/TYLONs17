@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import SocialLinks from "../icons/SocialLinks"
+import Image from "next/image"
 
 
 export default function Resume() {
@@ -25,11 +26,12 @@ export default function Resume() {
                     <div className="col-span-4 sm:col-span-3">
                         <div className="bg-gray-600 bg-opacity-70 shadow rounded-lg p-6">
                             <div className="flex flex-col items-center">
-                                <img onClick={openModal} src="./images/20230914_133438-JALES.jpg" className="w-32 h-32 bg-blue-300 rounded-full mb-4 object-cover cursor-pointer"/>
+                            <Image onClick={openModal} src="/images/20230914_133438-JALES.jpg" width={32} height={32} className="w-32 h-32 bg-blue-300 rounded-full mb-4 object-cover cursor-pointer" alt="A picture of the developer" />
+                                
 
                                 {isModalOpen && (
                                     <div onClick={closeModal} className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-500 ease-in-out">
-                                        <img src="./images/20230914_133438-JALES.jpg" className="max-h-full max-w-full" />
+                                        <Image src="/images/20230914_133438-JALES.jpg" className="max-h-full max-w-full" alt="A pop up picture of the developer"/>
                                     </div>
                                 )}
 
@@ -70,25 +72,25 @@ export default function Resume() {
                         <div className="bg-gray-600 bg-opacity-70 shadow rounded-lg p-6">
                             <h2 className="text-xl font-bold mb-4">About Me - <span className="text-sm text-blue-500">A student self learning Web Delopment while studying a computer networking Uni course</span></h2>
                             <p className="text-blue-500">
-                                <span className="font-bold">Here's a quick reflecton of my  personality and aspirations </span>
+                                <span className="font-bold">Here&apos;s a quick reflecton of my  personality and aspirations </span>
                                 <br />
                                 <span>
                                     --- <br />
 
-                                    Hello there! I go by <i className="font-bold">TYLONs</i>. <br />
-                                    I'm a passionate computer networking student with a keen interest in mastering the intricacies of JavaScript, C#, Python, and Java. <br /> 
-                                    My journey into the world of programming doesn't stop there – I'm also delving into the realms of web development with HTML, CSS, and React, with a particular focus on the Next.js Framework.
+                                    Hello there!U+1F44B I go by <i className="font-bold">TYLONs</i>. <br />
+                                    I&apos;m a passionate computer networking student with a keen interest in mastering the intricacies of JavaScript, C#, Python, and Java. <br /> 
+                                    My journey into the world of programming doesn&apos;t stop there – I&apos;m also delving into the realms of web development with HTML, CSS, and React, with a particular focus on the Next.js Framework.
 
-                                    Recently, I made the exciting discovery of going into Cyber-Security and a turn to Ubuntu as my operating system, and I've come to appreciate the power and efficiency of the terminal and all the easily accessable Networking and PenTesting tools available at a mere command. 
+                                    Recently, I made the exciting discovery of going into Cyber-Security and a turn to Ubuntu as my operating system, and I&apos;ve come to appreciate the power and efficiency of the terminal and all the easily accessable Networking and PenTesting tools available at a mere command. 
                                     <br />
-                                    It's not just a change in a hobby or OS; it's a shift in perspective.
+                                    It&apos;s not just a change in a hobby or OS; it&apos;s a shift in perspective.
 
                                     <br />
                                     <br />
-                                    When I'm not immersed in lines of code, you can find me Lyric writing or doing Muai Thai at the gym and sometimes exploring the latest trends in technology, always eager to apply myself, learn and adapt. Join me on this digital adventure as I navigate the vast landscapes of Programming, Networking and Cyber-Security.
+                                    When I&apos;m not immersed in lines of code, you can find me Lyric writing or doing Muai Thai at the gym and sometimes exploring the latest trends in technology, always eager to apply myself, learn and adapt. Join me on this digital adventure as I navigate the vast landscapes of Programming, Networking and Cyber-Security.
                                     <br />
                                     <br />
-                                    Let's connect and build something amazing together! <br />
+                                    Let&apos;s connect and build something amazing together! <br />
 
                                     ---
                                 </span>

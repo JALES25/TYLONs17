@@ -85,7 +85,7 @@ export default function About() {
   return (
     <div>
       <div className="p-4 max-w-[100vw]">
-        <h1 className="p-4 bg-gray-500 bg-opacity-70">Here's a Quick Overview About Me</h1>
+        <h1 className="p-4 bg-gray-500 bg-opacity-70">Here&apos;s a Quick Overview About Me</h1>
         <RainThunder />
         <div className="text-2xl pt-2">Facing a challange not knowing what it is or how to even start solving it, that is true  Stoitism.</div>
         <p>That is the sort of light i want to see lit in my eyes too. Come.. <span className="p-4 font-bold ">Face Me.</span> <sub>I shall be your opponent.</sub></p>

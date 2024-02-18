@@ -91,15 +91,17 @@ export default function Footer() {
                     TYLONs17
                 </h6>
                 <em className="hidden text-blue-600">
-                    "Blood of a champion &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|| T's givin shiii <br />
-                     Broke all my promises&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|| I'm running still <br />
-                     TYLONs th 1 yu want &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|| h's coming soon <br />
-                     He lives for a perfect end &emsp;&emsp;&emsp;&emsp;&emsp;|| me at our best <br />
-                     JALES in the hills singing lullabies &emsp;|| 0h h's a dreamer <br />
-                     Trippers Walk s lik all h does &emsp;&emsp;&emsp;&emsp;|| awaiting th flck effect <br />
-                     I AM TH ONE YU GET &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;|| in comes th reaper <br />
+                    &quote;
+                     Blood of a champion || T&apos;s givin shiii <br />
+                     Broke all my promises|| I&apos;m running still <br />
+                     TYLONs th 1 yu want || h&apos;s coming soon <br />
+                     He lives for a perfect end || me at our best <br />
+                     JALES in the hills singing lullabies || 0h h&apos;s a dreamer <br />
+                     Trippers Walk s lik all h does || awaiting th flck effect <br />
+                     I AM TH ONE YU GET || in comes th reaper <br />
                      *something something chaotic in that direction*
-                    "
+                    &quote;
+                     
                     &emsp;<span>-JAQUE</span>
                 </em>
             </div>

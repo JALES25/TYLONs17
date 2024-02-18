@@ -52,7 +52,6 @@ export default function Home() {
                 className="rounded-[2em] do-ripple"
                 width={100}
                 height={24}
-                priority
               />
 
             {'JALESnotJAQUE'}
@@ -67,7 +66,6 @@ export default function Home() {
           alt="JALESnotJAQUE Photo"
           width={100}
           height={100}
-          priority
           />
       </div> 
       <div className="">

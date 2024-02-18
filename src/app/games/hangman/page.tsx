@@ -7,6 +7,7 @@ import { useCallback, useEffect, useState } from "react"
 
 
 
+
 function getWord() {
   const wordList = require('word-list-json')
   return wordList[Math.floor(Math.random() * wordList.length)]
@@ -46,7 +47,7 @@ export default function Hangman() {
       return () => {
         document.removeEventListener('keypress', handler)
       }
-    }, [guessedLetters])
+    }, [guessedLetters, addGuessedLetter])
 
 
     useEffect(() => {

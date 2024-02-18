@@ -28,7 +28,7 @@ export default function Chatbox() {
             <div className="w-full">
                 <div ref={formWrapperRef} className="formbold-form-wrapper mx-auto hidden w-full max-w-[400px] max-h-[450px] rounded-lg border border-blue-500 bg-gray-600">
                     <div className="flex items-center justify-between rounded-t-lg bg-blue-900 py-2 px-9">
-                        <h3 className="text-xl font-bold text-white">Let's chat? - Online</h3>
+                        <h3 className="text-xl font-bold text-white">Let&apos;s chat? - Online</h3>
                         <button onClick={chatboxToggleHandler} className="text-white">
                             <svg width="17" height="17" viewBox="0 0 17 17" className="fill-current">
                                 <path

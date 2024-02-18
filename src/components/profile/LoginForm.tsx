@@ -83,7 +83,7 @@ export default function LoginForm() {
                     </Link>
 
                     <Link legacyBehavior href="/profile/register" >
-                        <span className="text-sm mt-3 text-right">Don't have an account? <a className="text-blue-500 hover:underline"> Register</a></span>
+                        <span className="text-sm mt-3 text-right">Don&apos;t have an account? <a className="text-blue-500 hover:underline"> Register</a></span>
                     </Link>
                 </form>
             </div>
