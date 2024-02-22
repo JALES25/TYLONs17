@@ -22,16 +22,16 @@ export default function Resume() {
     return (
         <div className="bg-gray-500 bg-opacity-60">
             <div className="container mx-auto py-8">
-                <div className="grid grid-cols-4 sm:grid-cols-12 gap-6 px-4">
+                <div className="grid grid-cols-4 sm:grid-cols-12 gap-4 md:gap-6 px-4">
                     <div className="col-span-4 sm:col-span-3">
                         <div className="bg-gray-600 bg-opacity-70 shadow rounded-lg p-6">
-                            <div className="flex flex-col items-center">
+                            <div className="relative flex flex-col items-center">
                             <Image onClick={openModal} src="/images/20230914_133438-JALES.jpg" width={32} height={32} className="w-32 h-32 bg-blue-300 rounded-full mb-4 object-cover cursor-pointer" alt="A picture of the developer" />
                                 
 
                                 {isModalOpen && (
                                     <div onClick={closeModal} className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-500 ease-in-out">
-                                        <Image src="/images/20230914_133438-JALES.jpg" className="max-h-full max-w-full" alt="A pop up picture of the developer"/>
+                                        <Image src="/images/20230914_133438-JALES.jpg" width={560} height={1580} alt="A pop up picture of the developer" className="max-h-full max-w-full" />
                                     </div>
                                 )}
 
@@ -77,7 +77,7 @@ export default function Resume() {
                                 <span>
                                     --- <br />
 
-                                    Hello there!U+1F44B I go by <i className="font-bold">TYLONs</i>. <br />
+                                    Hello there! 👋 I go by <i className="font-bold">TYLONs</i>. <br />
                                     I&apos;m a passionate computer networking student with a keen interest in mastering the intricacies of JavaScript, C#, Python, and Java. <br /> 
                                     My journey into the world of programming doesn&apos;t stop there – I&apos;m also delving into the realms of web development with HTML, CSS, and React, with a particular focus on the Next.js Framework.
 

@@ -69,17 +69,17 @@ export default function Hangman() {
     
 
   return (
-    <div className="flex flex-col items-center max-w-4xl max-h-[100vh] m-auto">
-      <h1>Hangman</h1>
-      <h4>Guess the letters in the secret word to solve the puzzle.</h4>
-      <div className="text-2xl text-center">
+    <div className="flex flex-col items-center max-w-4xl max-h-[100vh] m-auto px-4 sm:px-0">
+      <h1 className="text-2xl sm:text-3xl">Hangman</h1>
+      <h4 className="text-lg sm:text-xl">Guess the letters in the secret word to solve the puzzle.</h4>
+      <div className="text-xl sm:text-2xl text-center">
         {iswinner && "CONGRATULATIONS!!! You Survived the nignt.  Press Enter TO PLAY AGAIN"} 
         {isLooser && "OH NO!!! You couldn't make it in time.  Press Enter TO TRY AGAIN"} 
       </div>
 
-      <div className="max-h-[80vh] w-[90vw] flex flex-col  gap-1 ">
+      <div className="max-h-[80vh] w-full sm:w-[90vw] flex flex-col gap-1 ">
       
-        <div className="flex justify-around ">
+        <div className="flex flex-col sm:flex-row justify-around ">
           <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
           <div className="flex flex-col flex-wrap gap-2">
             <HangmanWord guessedLetters={guessedLetters} wordToGuess={wordToGuess} reveal={isLooser} />

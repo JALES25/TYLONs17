@@ -62,20 +62,20 @@ export default function Dashboard({ items, title, className }: DashboardProps) {
     
 
   return (
-    <div className={`p-4 bg-gray-800 ${className}`}>
-      <h1 className="text-2xl sm:text-3xl md:text-4xl">{title}</h1>
+    <div className={`p-4 sm:p-6 md:p-8 lg:p-10 bg-gray-800 ${className}`}>
+      <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl">{title}</h1>
       <input
         type="text"
         placeholder="Search..."
         value={searchTerm}
         onChange={e => setSearchTerm(e.target.value)}
-        className="mb-4 p-2 text-slate-200 bg-gray-500 w-full sm:w-1/2 md:w-1/3"
+        className="mb-4 p-2 text-slate-200 bg-gray-500 w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
       />
       {loading ? (
         <AiOutlineLoading /> //TODO: Add loading spinner
       ) : (
-        <div className="grid grid-rows-2">
-          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-rows-2 sm:grid-rows-1">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {/* filteredItems */}
             {currentPosts.map((item, index) => (
               <li key={index} className="my-2 flex items-center">

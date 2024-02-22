@@ -2,7 +2,6 @@
 
 import Logo from './Logo'
 import Link from 'next/link'
-// import Button from './Button'
 
 import { ThemeContext } from "@/context/ThemeContext"
 import React, { useContext, useEffect, useState } from "react"
@@ -133,18 +132,16 @@ export default function Navbar({ toggle }: { toggle: () => void }) {
               {session && <button onClick={() => signOut()} className={`h-12 border-2 rounded-lg bg-white font-bold px-5 text-blue-700 hover:text-white hover:bg-primary hover:shadow-md hover:shadow-blue-300 active:opacity-30 ${state.theme === 'dark' ? 'border-blue-400' : 'border-blue-800' } `}>Sign out</button>}
             </div> */}
             
-            <div className="">
-              <button className={`h-12 rounded-lg border-b-cyan-500 border-t-neutral-500 border-2 font-bold px-5 mr-2 text-blue-700 hover:text-white hover:bg-blue-900 hover:shadow-md hover:shadow-blue-300 active:opacity-30 ${state.theme === 'dark' ? '' : 'bg-blue-900 text-white hover:bg-primary border-blue-800'} `} 
-                      onClick={handleRegister}>
+            <div className="flex ">
+              <button onClick={handleRegister} className={`ml-2 h-8 sm:h-10 md:h-12 rounded-lg border-b-cyan-500 border-t-neutral-500 border-2 font-bold px-3 sm:px-4 md:px-5 mr-2 text-sm sm:text-base md:text-lg text-blue-700 hover:text-white hover:bg-blue-900 hover:shadow-md hover:shadow-blue-300 active:opacity-30 ${state.theme === 'dark' ? '' : 'bg-blue-900 text-white hover:bg-primary border-blue-800'} `}>
                 <Link href="/profile/register">Register</Link>
               </button>
-              <button className={`h-12 border-2 rounded-lg bg-white font-bold px-5 text-blue-700 hover:text-white hover:bg-primary hover:shadow-md hover:shadow-blue-300 active:opacity-30 ${state.theme === 'dark' ? 'border-blue-400' : 'border-blue-800' } `}
-                      onClick={handleSignIn}>
-                <Link href="/profile/login">Sing-In</Link>
+              <button onClick={handleSignIn} className={`ml-2 h-8 sm:h-10 md:h-12 border-2 rounded-lg bg-white font-bold px-3 sm:px-4 md:px-5 text-sm sm:text-base md:text-lg text-blue-700 hover:text-white hover:bg-primary hover:shadow-md hover:shadow-blue-300 active:opacity-30 ${state.theme === 'dark' ? 'border-blue-400' : 'border-blue-800' } `}>
+                  <Link href="/profile/login">Login</Link>
               </button> 
             </div>
 
-            <button type="button" className="inline-flex items-center md:hidden" onClick={toggle}>
+            <button type="button" className="lg:absolute inline-flex items-center md:hidden" onClick={toggle}>
                 {/* Menu icon */}
                 <svg xmlns="http://www.w3.org/2000/svg"
                     width="40"

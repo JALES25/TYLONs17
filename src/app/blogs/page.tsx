@@ -12,8 +12,8 @@ const blogPosts = [
 
 export default function Blog() {
     return (
-        <div className="p-4 bg-gray-800">
-            <h1>Blogs Dashboard</h1>
+        <div className="p-4 sm:p-6 md:p-8 lg:p-10 bg-gray-800">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl">Blogs Dashboard</h1>
             <hr />
             <Dashboard items={blogPosts} title="My blogs" className="bg-gray-900"/>
         </div>

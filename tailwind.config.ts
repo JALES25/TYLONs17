@@ -28,11 +28,11 @@ const config: Config = {
       textShadow: {
         '1px-1px-2px-rgba-0-0-0-0-2': '1px 1px 2px rgba(0, 0, 0, 0.2)',
       },  
-      backgroundImage: {
+      backgroundImage: theme => ({
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'sidebar-img': "url('/images/jal.jpg')",
+      }),
     },
   },
   plugins: [require('@tailwindcss/typography')],

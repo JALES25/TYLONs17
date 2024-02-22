@@ -5,7 +5,7 @@ import styles from "./keyboard.module.css"
 const KEYS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
 const KEYS0 = KEYS.map((letter) => letter.toLocaleLowerCase())
-console.log(KEYS0)
+// console.log(KEYS0)
 type KeyboardProps = {
   activeLetters: string[]
   inactiveLetters: string[]
@@ -15,7 +15,7 @@ type KeyboardProps = {
 
 export default function Keyboard({ activeLetters, inactiveLetters, addGuessedLetter, disabled=false}: KeyboardProps) {
   return (
-    <div className="grid " style={{ gridTemplateColumns: "repeat(auto-fit, minmax(75px, 1fr))", gap: ".5rem" }}>
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
         {KEYS0.map( key => {
           const isActive = activeLetters.includes(key)
           const isInactive = inactiveLetters.includes(key)

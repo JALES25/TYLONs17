@@ -36,15 +36,15 @@ export default function Logo() {
   
 
   return (
-    <div>
+    <div className="w-20 sm:w-24 md:w-32">
       <Link href="/" style={{ display: showButton ? "none" : "block" }}>
         {/* <Image src="" alt="Logo" width={width < 1024 ? "150" : "250"} height={width < 1024 ? "45" : "74"} className="relative" /> */}
         <TYLONsLogo />
       </Link>
 
-      <div style={{ display: showButton ? "block" : "none"}}>
+      {/* <div style={{ display: showButton ? "block" : "none"}}>
           <Button />
-      </div> 
+      </div>  */}
     </div>
   )
 }

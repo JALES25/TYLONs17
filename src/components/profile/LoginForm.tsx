@@ -57,9 +57,9 @@ export default function LoginForm() {
     }
 
     return (
-        <div className="grid place-items-center h-[80vh]">
-            <div className="shadow-md  shadow-blue-800 hover:shadow-lg hover:shadow-blue-500 p-5 rounded-lg border-t-4 border-t-blue-500 bg-gray-900">
-                <h1 className="text-xl font-bold my-4">Enter Sign-In details</h1>
+        <div className="grid place-items-center h-[80vh] sm:h-[90vh] lg:h-[100vh]">
+            <div className="shadow-md  shadow-blue-800 hover:shadow-lg hover:shadow-blue-500 p-5 rounded-lg border-t-4 border-t-blue-500 bg-gray-900 sm:w-full md:w-3/4 lg:w-1/2 xl:w-1/3">
+                <h1 className="text-xl sm:text-2xl md:text-3xl font-bold my-4">Enter Sign-In details</h1>
 
                 <form onSubmit={handleSubmit} action="" className="flex flex-col gap-3">
                     <input onChange={e => setUsername(e.target.value)} className="login-input" type="text" placeholder="User Name" />

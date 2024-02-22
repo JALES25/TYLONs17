@@ -26,7 +26,7 @@ export default function Chatbox() {
         // component
         <div className="flex items-center justify-center ">
             <div className="w-full">
-                <div ref={formWrapperRef} className="formbold-form-wrapper mx-auto hidden w-full max-w-[400px] max-h-[450px] rounded-lg border border-blue-500 bg-gray-600">
+                <div ref={formWrapperRef} className="formbold-form-wrapper mx-auto hidden w-full max-w-[400px] max-h-[450px] rounded-lg border border-blue-500 bg-gray-600 sm:max-w-full sm:max-h-full">
                     <div className="flex items-center justify-between rounded-t-lg bg-blue-900 py-2 px-9">
                         <h3 className="text-xl font-bold text-white">Let&apos;s chat? - Online</h3>
                         <button onClick={chatboxToggleHandler} className="text-white">
@@ -90,7 +90,7 @@ export default function Chatbox() {
                     </form>
                 </div>
                 <div className="mx-auto mt-12 flex max-w-[400px] max-h-[450px] items-center justify-end space-x-5">
-                    <button className="flex h-[70px] w-[70px] items-center justify-center rounded-full bg-blue-900 hover:bg-blue-700 text-white" onClick={chatboxToggleHandler}>
+                    <button className="flex h-[70px] w-[70px] items-center justify-center rounded-full bg-blue-900 hover:bg-blue-700 text-white sm:h-[50px] sm:w-[50px]" onClick={chatboxToggleHandler}>
                         <span ref={crossIconRef} className="cross-icon hidden">
                             <svg
                                 width="17"

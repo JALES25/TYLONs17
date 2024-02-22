@@ -83,8 +83,8 @@ export default function RegisterForm() {
     }
 
     return (
-        <div className="grid place-items-center h-[80vh]">
-            <div className="shadow-md shadow-blue-400 hover:shadow-lg hover:shadow-blue-500 p-5 rounded-lg border-t-4 border-t-blue-500 bg-gray-900">
+        <div className="grid place-items-center h-[80vh] sm:h-[90vh] lg:h-[100vh]">
+            <div className="shadow-md shadow-blue-400 hover:shadow-lg hover:shadow-blue-500 p-5 rounded-lg border-t-4 border-t-blue-500 bg-gray-900 sm:w-full md:w-3/4 lg:w-1/2 xl:w-1/3">
                 <h1 className="text-xl font-bold my-4">Register</h1>
 
                 <form onSubmit={handleSubmit} action="" className="flex flex-col gap-3">

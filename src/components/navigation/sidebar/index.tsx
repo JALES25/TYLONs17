@@ -1,9 +1,23 @@
+"use client"
 
+import { ThemeContext } from "@/context/ThemeContext"
 import Link from "next/link"
+import { usePathname } from "next/navigation";
+import { useContext, useEffect } from "react";
 
 export default function Sidebar({ isOpen, toggle}: { isOpen: boolean; toggle: () => void; }): JSX.Element {
+    const { state, dispatch } = useContext(ThemeContext)
+    const { currentPage } = state
+
+    const pathname = usePathname()
+
+    useEffect(() => {
+        dispatch({ type: 'SET_CURRENT_PAGE', currentPage: pathname })
+    }, [pathname, dispatch])
+
     return (
-        <div className="sidebar-container fixed w-full h-full overflow-hidden justify-center bg-transparent grid pt-[120px] left-0 z-10" style={{ opacity: `${isOpen ? "1" : "0"}`, top: ` ${isOpen ? "0" : "-100%"}`}}>
+        <div className={`sidebar-container fixed w-full h-full overflow-hidden justify-center grid pt-[120px] left-0 z-10 bg-sidebar-img bg-cover bg-center bg-no-repeat bg-opacity-50 ${isOpen ? 'opacity-100' : 'opacity-0'} ${isOpen ? 'top-0' : 'top-full'}`}>
+            <div className="absolute inset-0 bg-black opacity-50"></div>
             <button className="absolute right-0 p-5" onClick={toggle}>
                 {/* Close icon */}
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"> 
@@ -16,18 +30,35 @@ export default function Sidebar({ isOpen, toggle}: { isOpen: boolean; toggle: ()
 
             <ul className="sidebar-nav text-center leading-relaxed text-xl">
                 <li>
-                    <Link href="/about" onClick={toggle}><p>About Us</p></Link>
+                    <Link href="/about" onClick={toggle} className={`hover:text-blue-700 active:text-cyan-400 custom-text-shadow  ${currentPage === "/about" ? "text-blue-400 font-semibold  " : " opacity-90 hover:opacity-100" } `}>
+                        <p>About Me</p>
+                    </Link>
                 </li>
                 <li>
-                    <Link href="/services" onClick={toggle}><p>Games</p></Link>
+                    <Link href="/games" onClick={toggle} className={`hover:text-blue-700 active:text-cyan-400 custom-text-shadow  ${currentPage === "/games" ? "text-blue-400 font-semibold  " : " opacity-90 hover:opacity-100" } `}>
+                        <p>My Games</p>
+                    </Link>
                 </li>
                 <li>
-                    <Link href="/services" onClick={toggle}><p>Music</p></Link>
+                    <Link href="/music" onClick={toggle} className={`hover:text-blue-700 active:text-cyan-400 custom-text-shadow  ${currentPage === "/music" ? "text-blue-400 font-semibold  " : " opacity-90 hover:opacity-100" } `}>
+                        <p>My Music</p>
+                    </Link>
                 </li>
                 <li>
-                    <Link href="/contacts" onClick={toggle}><p>Contacts</p></Link>
+                    <Link href="/blogs" onClick={toggle} className={`hover:text-blue-700 active:text-cyan-400 custom-text-shadow  ${currentPage === "/blogs" ? "text-blue-400 font-semibold  " : " opacity-90 hover:opacity-100" } `}>
+                        <p>My Blogs</p>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="/contact" onClick={toggle} className={`hover:text-blue-700 active:text-cyan-400 custom-text-shadow  ${currentPage === "/contact" ? "text-blue-400 font-semibold  " : " opacity-90 hover:opacity-100" } `}>
+                        <p>My Contacts</p>
+                    </Link>
                 </li>
             </ul>
         </div>
     )
 }
+
+
+
+

@@ -5,7 +5,6 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider, ThemeContext } from '@/context/ThemeContext'
 import Navigation from '@/components/navigation'
-// import Footer from '@/components/layout/Footer'
 import GamesBar from '@/components/layout/gameSideBar/GamesBar'
 import { SessionProvider } from 'next-auth/react'
 import { Session } from 'next-auth'
@@ -43,7 +42,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThemeProvider>
-      {/* bg-black bg-opacity-[98%] */}
         <body className={`${inter.className} `}>
           <AuthProvider >
               {/* <div > */}
@@ -51,10 +49,11 @@ export default function RootLayout({
                   <Navigation />
                 {/* </SessionProvider> */}
                 <DBackground>
-                  <div className="ml-20 p-4 ">{children}</div>
+                  <div className="md:ml-20 md:p-4 sm:p-2 ">{children}</div>
                 </DBackground>
-                <GamesBar />
-                {/* <Footer  /> */}
+                <div className="hidden md:block">
+                  <GamesBar />
+                </div>
               {/* </div> */}
           </AuthProvider> 
         </body>

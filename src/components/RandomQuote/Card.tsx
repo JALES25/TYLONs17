@@ -23,12 +23,12 @@ export default function Card() {
 
 
     return (
-        <div className="bg-primary rounded-[1em] p-[.5em] w-[30%] m-auto flex flex-col  hover:shadow-lg hover:shadow-blue-700 bg-opacity-50" id="quote-box">
-            <div className="font-bold text-[2rem] p-[1em]" id="text">
+        <div id="quote-box" className="bg-primary rounded-[1em] p-[.5em] w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/5 m-auto flex flex-col  hover:shadow-lg hover:shadow-blue-700 bg-opacity-50" >
+            <div id="text" className="font-bold text-[2rem] p-[1em]" >
                 {quote.quote}
             </div>
-            <div className="text-gray-400" id="author">- {quote.author}</div>
-            <a className="max-w-[4em] max-h-[4em] items-start" href="https://twitter.com/intent/tweet" id="tweet-quote" onClick={tweetQuote} title="Click to tweet this quote">
+            <div id="author" className="text-gray-400" >- {quote.author}</div>
+            <a id="tweet-quote" onClick={tweetQuote} title="Click to tweet this quote" href="https://twitter.com/intent/tweet" className="max-w-[4em] max-h-[4em] items-start"  >
                 <svg viewBox="0 0 960 960" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -38,7 +38,7 @@ export default function Card() {
                     </g>
                 </svg>
             </a>
-            <button className="bg-gray-700 px-[.6em] py-[1.2em] text-[1em] font-[500] rounded-[2em] border-2 border-transparent transition-colors duration-250 hover:border-blue-600 hover:bg-gray-900 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-500 hover:font-bold hover:text-blue-200 active:bg-blue-700 " id="new-quote" onClick={generateQuote}>New Quote</button>      
+            <button id="new-quote" onClick={generateQuote} className="bg-gray-700 px-[.6em] py-[1.2em] text-[1em] font-[500] rounded-[2em] border-2 border-transparent transition-colors duration-250 hover:border-blue-600 hover:bg-gray-900 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-500 hover:font-bold hover:text-blue-200 active:bg-blue-700 " >New Quote</button>      
         </div>
     )
 }

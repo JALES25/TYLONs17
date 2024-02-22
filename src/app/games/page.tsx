@@ -15,8 +15,8 @@ const games = [
 
 export default function Games() {
   return (
-    <div className="p-4 bg-gray-600">
-        <h1>This is the Games dashboard</h1>
+    <div className="p-4 sm:p-8 bg-gray-600">
+        <h1 className="text-xl sm:text-2xl lg:text-3xl">This is the Games dashboard</h1>
         <hr />
         <Dashboard items={games} title="Play some Games" className="bg-gray-900"/>
     </div>

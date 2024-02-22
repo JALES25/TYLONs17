@@ -18,9 +18,9 @@ export default function Contact() {
   return (
     <section className="border-t-2 border-blue-700 pb-8 bg-gray-900 bg-opacity-50 max-h-full max-w-full" id="contact">
       {/* <h1 className="text-center m-auto py-[2.5em] px-0 font-[300] text-6xl text-blue-600 uppercase tracking-wider">Contact</h1> */}
-      <div className="flex flex-row justify-between mx-auto p-8 relative max-w-7xl ">
+      <div className="flex flex-col lg:flex-row justify-between mx-auto p-8 relative max-w-7xl ">
         {/* Left contact page */}
-        <div className=" text-white text-center">
+        <div className=" text-white text-center mb-8 md:mb-0">
           <p className="text-2xl text-gray-400">
             Have a question or want to get in touch? Feel free to reach out!
           </p>
@@ -31,38 +31,9 @@ export default function Contact() {
 
           <Chatbox /> 
         </div>
-        
-        {/* <form
-          id="contact-form"
-          className="max-w-[25em] font-[400] "
-          role="form"
-          onSubmit={handleSubmit}
-        >
-          <div className="form-group">
-            <div className="col-sm-12 ">
-              <input type="text" className="max-w-[25em] rounded-md border border-blue-700  bg-black hover:bg-slate-900" id="name" placeholder="NAME" name="name" value="" required/>
-            </div>
-          </div>
-
-          <div className="form-group">
-            <div className="col-sm-12">
-              <input type="email" className="max-w-[25em] rounded-md border border-blue-700  bg-black mt-[.625em] hover:bg-slate-900 " id="email" placeholder="EMAIL" name="email" value="" required/>
-            </div>
-          </div>
-
-          <textarea className="max-w-[25em] rounded-md border border-blue-700  bg-black mt-[.625em] font-bold text-[1em] transform hover:translate-y-[-29px] transition-transform duration-200 ease-in-out hover:bg-slate-900" rows={10} placeholder="MESSAGE" name="message" required></textarea>
-          
-          <button className="mt-[1em] h-[2.2em] w-[25em] overflow-hidden transition-all duration-200 ease-in-out btn btn-primary" id="submit" type="submit" value="SEND">
-            <div className="h-[25em] w-[2.2em] transition-all duration-200 ease-in-out">
-              <i className="fa fa-paper-plane"></i><span className="block mt-">SEND</span>
-            </div>
-          </button>
-        </form> */}
-
-
 
         {/* Right contact page */}
-        <div className="max-w-[25em] ">
+        <div className="max-w-[25em] mx-auto md:mx-0 ">
           <ul className="list-none ml-[-2em] pr-20">
             <li className="leading-4 text-xl flex items-center"><FaMapMarker className="hover:text-blue-500 text-blue-800 scale-150 hover:scale-125 active:text-cyan-400 mb-2" /><span className="font-[300] text-[1em] ml-[2em]">818 Into The Sky</span></li>
 

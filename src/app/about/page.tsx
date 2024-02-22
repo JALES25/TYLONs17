@@ -1,5 +1,3 @@
-// import Rain from '@/components/theme/Rain'
-// import RainEffect from '@/components/theme/RainEffect'
 import ProjectsCard from '@/components/projectsCard/ProjectsCard';
 import Resume from '@/components/resume/Resume'
 import RainThunder from '@/components/theme/RainThunder'
@@ -83,12 +81,12 @@ export default function About() {
 
 
   return (
-    <div>
-      <div className="p-4 max-w-[100vw]">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="p-4 max-w-[100vw] sm:max-w-full">
         <h1 className="p-4 bg-gray-500 bg-opacity-70">Here&apos;s a Quick Overview About Me</h1>
         <RainThunder />
-        <div className="text-2xl pt-2">Facing a challange not knowing what it is or how to even start solving it, that is true  Stoitism.</div>
-        <p>That is the sort of light i want to see lit in my eyes too. Come.. <span className="p-4 font-bold ">Face Me.</span> <sub>I shall be your opponent.</sub></p>
+        <div className="text-2xl pt-2 hidden sm:block">Facing a challange not knowing what it is or how to even start solving it, that is true  Stoitism.</div>
+        <p className="hidden sm:block">That is the sort of light i want to see lit in my eyes too. Come.. <span className="p-4 font-bold ">Face Me.</span> <sub>I shall be your opponent.</sub></p>
 
         <hr className="border-blue-500" />
         <br />
