@@ -30,28 +30,38 @@ export default function Sidebar({ isOpen, toggle}: { isOpen: boolean; toggle: ()
 
             <ul className="sidebar-nav text-center leading-relaxed text-xl">
                 <li>
-                    <Link href="/about" onClick={toggle} className={`hover:text-blue-700 active:text-cyan-400 custom-text-shadow  ${currentPage === "/about" ? "text-blue-400 font-semibold  " : " opacity-90 hover:opacity-100" } `}>
-                        <p>About Me</p>
+                    <Link href="/about" >
+                        <p onClick={toggle} className={`hover:text-blue-700 active:text-cyan-400 custom-text-shadow  ${currentPage === "/about" ? "text-blue-400 font-semibold  " : " opacity-90 hover:opacity-100" } `}>
+                            About Me
+                        </p>
                     </Link>
                 </li>
                 <li>
-                    <Link href="/games" onClick={toggle} className={`hover:text-blue-700 active:text-cyan-400 custom-text-shadow  ${currentPage === "/games" ? "text-blue-400 font-semibold  " : " opacity-90 hover:opacity-100" } `}>
-                        <p>My Games</p>
+                    <Link href="/games" >
+                        <p onClick={toggle} className={`hover:text-blue-700 active:text-cyan-400 custom-text-shadow  ${currentPage === "/games" ? "text-blue-400 font-semibold  " : " opacity-90 hover:opacity-100" } `}>
+                            My Games
+                        </p>
                     </Link>
                 </li>
                 <li>
-                    <Link href="/music" onClick={toggle} className={`hover:text-blue-700 active:text-cyan-400 custom-text-shadow  ${currentPage === "/music" ? "text-blue-400 font-semibold  " : " opacity-90 hover:opacity-100" } `}>
-                        <p>My Music</p>
+                    <Link href="/music" >
+                        <p onClick={toggle} className={`hover:text-blue-700 active:text-cyan-400 custom-text-shadow  ${currentPage === "/music" ? "text-blue-400 font-semibold  " : " opacity-90 hover:opacity-100" } `}>
+                            My Music
+                        </p>
                     </Link>
                 </li>
                 <li>
-                    <Link href="/blogs" onClick={toggle} className={`hover:text-blue-700 active:text-cyan-400 custom-text-shadow  ${currentPage === "/blogs" ? "text-blue-400 font-semibold  " : " opacity-90 hover:opacity-100" } `}>
-                        <p>My Blogs</p>
+                    <Link href="/blogs" >
+                        <p onClick={toggle} className={`hover:text-blue-700 active:text-cyan-400 custom-text-shadow  ${currentPage === "/blogs" ? "text-blue-400 font-semibold  " : " opacity-90 hover:opacity-100" } `}>
+                            My Blogs
+                        </p>
                     </Link>
                 </li>
                 <li>
-                    <Link href="/contact" onClick={toggle} className={`hover:text-blue-700 active:text-cyan-400 custom-text-shadow  ${currentPage === "/contact" ? "text-blue-400 font-semibold  " : " opacity-90 hover:opacity-100" } `}>
-                        <p>My Contacts</p>
+                    <Link href="/contact" >
+                        <p onClick={toggle} className={`hover:text-blue-700 active:text-cyan-400 custom-text-shadow  ${currentPage === "/contact" ? "text-blue-400 font-semibold  " : " opacity-90 hover:opacity-100" } `}>
+                            My Contacts
+                        </p>
                     </Link>
                 </li>
             </ul>

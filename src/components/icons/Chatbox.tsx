@@ -78,7 +78,7 @@ export default function Chatbox() {
                                 rows={4}
                                 name="message"
                                 id="message"
-                                placeholder="Explain your queries"
+                                placeholder="Leave a message?"
                                 className="w-full resize-none rounded-md border border-[#e0e0e0] bg-gray-500 py-3 px-6 text-base font-medium text-blue-900 outline-none focus:bg-gray-200 focus:border-blue-900 focus:shadow-md">
                             </textarea>
                         </div>

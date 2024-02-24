@@ -4,6 +4,8 @@ import { useState } from "react"
 import SocialLinks from "../icons/SocialLinks"
 import Image from "next/image"
 
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
+
 
 export default function Resume() {
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -18,6 +20,9 @@ export default function Resume() {
         setModalOpacity(0)
         setTimeout(() => setIsModalOpen(false), 500)
     }
+
+    // 
+    const [isVisible, setIsVisible] = useState(false)
 
     return (
         <div className="bg-gray-500 bg-opacity-60">
@@ -43,59 +48,100 @@ export default function Resume() {
                                 </div>
                             </div>
                             <hr className="my-6 border-t border-blue-700" />
-                            <div className="flex flex-col">
-                                <span className="text-blue-500 uppercase font-bold tracking-wider mb-2">Front-End Skills</span>
-                                <ul>
-                                    <li className="mb-2">JavaScript</li>
-                                    <li className="mb-2">React / Next.js</li>
-                                    <li className="mb-2">Node.js</li>
-                                    <li className="mb-2">HTML/CSS</li>
-                                    <li className="mb-2">Sass Scss</li>
-                                    <li className="mb-2">Tailwind Css</li>
-                                    <li className="mb-2">Boodstrap Css</li>
-                                </ul>
-                            </div>
+                            <div className="flex justify-center align-center gap-4 md:flex-col" >
+                                <div className="flex flex-col">
+                                    <span className="text-blue-500 uppercase font-bold tracking-wider mb-2">Front-End Skills</span>
+                                    <ul>
+                                        <li className="mb-2">JavaScript</li>
+                                        <li className="mb-2">React / Next.js</li>
+                                        <li className="mb-2">Node.js</li>
+                                        <li className="mb-2">HTML/CSS</li>
+                                        <li className="mb-2">Sass Scss</li>
+                                        <li className="mb-2">Tailwind Css</li>
+                                        <li className="mb-2">Boodstrap Css</li>
+                                    </ul>
+                                </div>
 
-                            <div className="flex flex-col">
-                                <span className="text-blue-500 uppercase font-bold tracking-wider mb-2">Extra Skills</span>
-                                <ul>
-                                    <li className="mb-2">C#</li>
-                                    <li className="mb-2">ASP.NET Core MVC</li>
-                                    <li className="mb-2">ASP.NET Core Blazor</li>
-                                    <li className="mb-2">PYTHON</li>
-                                    <li className="mb-2">JAVA</li>
-                                </ul>
+                                <hr className=" md:hidden border-t border-blue-700" />
+
+                                <div className="flex flex-col">
+                                    <span className="text-blue-500 uppercase font-bold tracking-wider mb-2">Extra Skills</span>
+                                    <ul>
+                                        <li className="mb-2">C#</li>
+                                        <li className="mb-2">ASP.NET Core MVC</li>
+                                        <li className="mb-2">ASP.NET Core Blazor</li>
+                                        <li className="mb-2">PYTHON & JAVA</li>
+                                        <li className="mb-2">Web Security</li>
+                                        <li>PenTesting & CTFs</li>
+                                        <li>Scripting (py3 / bash)</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div className="col-span-4 sm:col-span-9">
                         <div className="bg-gray-600 bg-opacity-70 shadow rounded-lg p-6">
                             <h2 className="text-xl font-bold mb-4">About Me - <span className="text-sm text-blue-500">A student self learning Web Delopment while studying a computer networking Uni course</span></h2>
-                            <p className="text-blue-500">
-                                <span className="font-bold">Here&apos;s a quick reflecton of my  personality and aspirations </span>
+                            
+                            <p className="text-blue-500 hidden md:block">
+                                <span className="font-bold">Here&apos;s a quick reflection of my personality and aspirations </span>
                                 <br />
                                 <span>
                                     --- <br />
-
                                     Hello there! 👋 I go by <i className="font-bold">TYLONs</i>. <br />
                                     I&apos;m a passionate computer networking student with a keen interest in mastering the intricacies of JavaScript, C#, Python, and Java. <br /> 
                                     My journey into the world of programming doesn&apos;t stop there – I&apos;m also delving into the realms of web development with HTML, CSS, and React, with a particular focus on the Next.js Framework.
-
-                                    Recently, I made the exciting discovery of going into Cyber-Security and a turn to Ubuntu as my operating system, and I&apos;ve come to appreciate the power and efficiency of the terminal and all the easily accessable Networking and PenTesting tools available at a mere command. 
+                                    Recently, I made the exciting discovery of going into Cyber-Security and a turn to Ubuntu as my operating system, and I&apos;ve come to appreciate the power and efficiency of the terminal and all the easily accessible Networking and PenTesting tools available at a mere command. 
                                     <br />
                                     It&apos;s not just a change in a hobby or OS; it&apos;s a shift in perspective.
-
                                     <br />
                                     <br />
                                     When I&apos;m not immersed in lines of code, you can find me Lyric writing or doing Muai Thai at the gym and sometimes exploring the latest trends in technology, always eager to apply myself, learn and adapt. Join me on this digital adventure as I navigate the vast landscapes of Programming, Networking and Cyber-Security.
                                     <br />
                                     <br />
-                                    Let&apos;s connect and build something amazing together! <br />
+                                </span>
+                            </p>
+                            
+                            {/* /For small devices/ */}
+                            <div className="sm:flex sm:items-start">
+                                <button onClick={() => setIsVisible(!isVisible)} className="sm:hidden mb-2" >
+                                    {isVisible ? <FaEyeSlash /> : <FaEye />}
+                                </button>
+                                {isVisible && (
+                                    <p className="text-blue-500">
+                                        <span className="font-bold">Here&apos;s a quick reflection of my personality and aspirations </span>
+                                        <br />
+                                        <span>
+                                            --- <br />
+                                            Hello there! 👋 I go by <i className="font-bold">TYLONs</i>. <br />
+                                            I&apos;m a passionate computer networking student with a keen interest in mastering the intricacies of JavaScript, C#, Python, and Java. <br /> 
+                                            My journey into the world of programming doesn&apos;t stop there – I&apos;m also delving into the realms of web development with HTML, CSS, and React, with a particular focus on the Next.js Framework.
+                                            Recently, I made the exciting discovery of going into Cyber-Security and a turn to Ubuntu as my operating system, and I&apos;ve come to appreciate the power and efficiency of the terminal and all the easily accessible Networking and PenTesting tools available at a mere command. 
+                                            <br />
+                                            It&apos;s not just a change in a hobby or OS; it&apos;s a shift in perspective.
+                                            <br />
+                                            <br />
+                                            When I&apos;m not immersed in lines of code, you can find me Lyric writing or doing Muai Thai at the gym and sometimes exploring the latest trends in technology, always eager to apply myself, learn and adapt. Join me on this digital adventure as I navigate the vast landscapes of Programming, Networking and Cyber-Security.
+                                            <br />
+                                            <br />
+                                        </span>
+                                    </p>
+                                )}
+                            </div>
 
+                            <p className="text-blue-500">
+                                
+                                <span>
+                                    ---
+                                    <br />
+                                    Let&apos;s connect and build something amazing together! 
+                                    <br />
                                     ---
                                 </span>
 
                             </p>
+
+                            
 
                             <hr className="my-6 border-t border-blue-700" />
 
@@ -164,3 +210,10 @@ export default function Resume() {
         </div>
     )
 }
+
+
+
+
+
+
+  

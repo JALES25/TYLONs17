@@ -111,11 +111,11 @@ export default function Home() {
         </div>
       </div> */}
 
-      <div className="flex flex-col items-center justify-center sm:flex-row">
-        <h4 className="sm:absolute sm:left-[6rem] mt-[6rem] sm:mt-0 mb-20 border-b-2 border-blue-600 hover:text-blue-300 hover:border-blue-400 ">
+      <div className="flex items-center justify-center">
+        <h4 className="absolute left-[2rem] md:left-[6rem] mt-0 mb-20 border-b-2 border-blue-600 hover:text-blue-300 hover:border-blue-400 ">
           <Link href="/contact">Looking to hire me?</Link>
         </h4>
-        <AnimatedRight className="hidden sm:block"/>
+        <AnimatedRight className="hidden md:block mt-6"/>
         <div className="flex flex-col sm:flex-row gap-2"> 
           <RippleButton onClick={getCV} id="downloadButton" className="w-full sm:w-auto" >Download CV</RippleButton>
           <RippleButton onClick={showWorks} className="w-full sm:w-auto" >Checkout My Works</RippleButton>
