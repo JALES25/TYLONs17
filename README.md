@@ -57,10 +57,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 
     ## Site Screeenshots
-    ![Home page](/Screenshots/image.png)
-    ![games page](/Screenshots/screencapture-localhost-3000-games-2024-09-08-09_29_54.png)
-    ![about page](/Screenshots/screencapture-localhost-3000-about-2024-09-08-09_27_54.png)
-    ![blogs page](/Screenshots/screencapture-localhost-3000-blogs-2024-09-08-09_31_54.png)
-    ![contact page](/Screenshots/screencapture-localhost-3000-contact-2024-09-08-09_32_54.png)
+    ![Home page](./public/Screenshots/image.png)
+    ![games page](./public/Screenshots/screencapture-localhost-3000-games-2024-09-08-09_29_54.png)
+    ![about page](./public/Screenshots/screencapture-localhost-3000-about-2024-09-08-09_27_54.png)
+    ![blogs page](./public/Screenshots/screencapture-localhost-3000-blogs-2024-09-08-09_31_54.png)
+    ![contact page](./public/Screenshots/screencapture-localhost-3000-contact-2024-09-08-09_32_54.png)
 
     
