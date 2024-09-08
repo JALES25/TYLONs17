@@ -1,6 +1,6 @@
 "use client"
 
-import Chatbox from '@/components/icons/Chatbox'
+import Chatbox from '@/components/utils/Chatbox'
 import SocialLinks from '@/components/icons/SocialLinks'
 
 import React from 'react'
@@ -34,49 +34,39 @@ export default function Contact() {
 
         {/* Right contact page */}
         <div className="max-w-[25em] mx-auto md:mx-0 items-center">
-          <ul className="list-none ml-20 lg:ml-[-2em] pr-20">
-            <li className="leading-4 text-xl flex items-center space-x-2">
+          <ul className="list-none flex flex-col items-center space-y-4">
+            <li className="leading-4 text-xl flex items-center space-x-2 justify-center">
               <FaMapMarker className="hover:text-blue-500 text-blue-800 scale-150 hover:scale-125 active:text-cyan-400 mb-2 mr-4" />
-              <span className=" font-[300] text-[1em] ">818 Into The Sky</span>
+              <span className="font-[300] text-[1em]">818 Into The Sky</span>
             </li>
 
-            <li className="leading-4 text-xl flex items-center space-x-2">
+            <li className="leading-4 text-xl flex items-center space-x-2 justify-center">
               <FaPhone className="hover:text-blue-500 text-blue-800 scale-150 hover:scale-125 active:text-cyan-400 my-2 mr-4" />
-              <span className=" font-[300] text-[1em] leading-4">
-                <a className=" text-gray-500 hover:text-gray-400" href="tel:0684443922" title="Give me a call">(+27 68) 444-3922</a>
+              <span className="font-[300] text-[1em] leading-4">
+                <a className="text-gray-500 hover:text-gray-400" href="tel:0684443922" title="Give me a call">(+27 68) 444-3922</a>
               </span>
             </li>
 
-            <li className="leading-4 text-xl flex items-center space-x-2">
+            <li className="leading-4 text-xl flex items-center space-x-2 justify-center">
               <FaEnvelope className="hover:text-blue-500 text-blue-800 scale-150 hover:scale-125 active:text-cyan-400 my-2 mr-4" />
-              <span className=" font-[300] text-[1em] leading-4">
+              <span className="font-[300] text-[1em] leading-4">
                 <a className="text-gray-500 hover:text-gray-400" href="mailto:jalesnotjaque@gmail.com" title="Send me an email">jalesnotjaque@gmail.com</a>
               </span>
             </li>
           </ul>
 
-          {/* <ul className="list-none ml-[-2em] pr-20">
-            <li className="leading-4 text-xl flex items-center">
-              <FaMapMarker className="hover:text-blue-500 text-blue-800 scale-150 hover:scale-125 active:text-cyan-400 mb-2" />
-              <span className="font-[300] text-[1em] ml-[2em]">818 Into The Sky</span>
-            </li>
-
-            <li className="leading-4 text-xl flex items-center"><FaPhone className="hover:text-blue-500 text-blue-800 scale-150 hover:scale-125 active:text-cyan-400 my-2" /><span className="font-[300] text-[1em] leading-4 ml-[2.2em]"><a className="text-gray-500 hover:text-gray-400" href="tel:0684443922" title="Give me a call">(+27 68) 444-3922</a></span></li>
-
-            <li className="leading-4 text-xl flex items-center"><FaEnvelope className="hover:text-blue-500 text-blue-800 scale-150 hover:scale-125 active:text-cyan-400 my-2" /><span className="font-[300] text-[1em] leading-4 ml-[2.4em]"><a className="text-gray-500 hover:text-gray-400" href="mailto:jalesnotjaque@gmail.com" title="Send me an email">jalesnotjaque@gmail.com</a></span></li>
-
-          </ul> */}
-
-          <hr className="border-t  border-blue-700 border-opacity-60 my-4" />
+          <hr className="border-t border-blue-700 border-opacity-60 my-4" />
 
           {/* Social Media Icons */}
           <div className="social-media-list relative text-center w-full mx-auto py-4 text-2xl">
             <SocialLinks />
           </div>
 
-          <hr className="border-t  border-blue-700 border-opacity-60"/>
+          <hr className="border-t border-blue-700 border-opacity-60" />
 
-          <div className="copyright p-4 text-center font-bold text-[1.2em] text-blue-600 tracking-wider ">&copy; 2023 TYLONs17&trade;</div>
+          <div className="copyright p-4 text-center font-bold text-[1.2em] text-blue-600 tracking-wider">
+            &copy; 2023 TYLONs17&trade;
+          </div>
         </div>
       </div>
 
