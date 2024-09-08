@@ -5,8 +5,8 @@ import { useContext } from "react"
 import SideBarIcon from "./SideBarIcon"
 
 import { IconType } from 'react-icons'
-import { BsFillLightningFill, BsPlus, BsGearFill } from 'react-icons/bs'
-import { FaPoo } from 'react-icons/fa'
+import { BsFillLightningFill, BsPlus, } from 'react-icons/bs'
+import { FaGamepad, FaPoo } from 'react-icons/fa'
 import { FaPersonWalkingLuggage } from "react-icons/fa6"
 import { TbWorldSearch } from "react-icons/tb"
 
@@ -24,26 +24,10 @@ const iconTexts: { [key: string]: string } = {
   TbWorldSearch: "Explore?",
   BsFillLightningFill: "Lightning",
   FaPoo: "Useless", 
-  BsGearFill: "GearGrind",
+  FaGamepad: "Play Games",
 }
 
 
-// function getIconByName(name: string) {
-//   switch (name) {
-//       case 'BsFillLightningFill':
-//           return BsFillLightningFill;
-//       case 'TbWorldSearch':
-//           return TbWorldSearch;
-//       case 'BsGearFill':
-//           return BsGearFill;
-//       case 'FaPersonWalkingLuggage':
-//           return FaPersonWalkingLuggage;
-//       case 'FaPoo':
-//           return FaPoo;
-//       default:
-//           return FaPersonWalkingLuggage;  
-//   }
-// }
 
 export default function GamesSideBar({ iconNames }: GamesSideBarProps) {
   // console.log(icons)

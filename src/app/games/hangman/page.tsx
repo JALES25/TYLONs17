@@ -1,8 +1,8 @@
 "use client"
 
-import HangmanDrawing from "@/components/hangmanLogic/HangmanDrawing"
-import HangmanWord from "@/components/hangmanLogic/HangmanWord"
-import Keyboard from "@/components/hangmanLogic/Keyboard"
+import HangmanDrawing from "@/components/gameLogic/hangmanLogic/HangmanDrawing"
+import HangmanWord from "@/components/gameLogic/hangmanLogic/HangmanWord"
+import Keyboard from "@/components/gameLogic/hangmanLogic/Keyboard"
 import { useCallback, useEffect, useState } from "react"
 
 

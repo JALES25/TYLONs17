@@ -1,4 +1,4 @@
-import ProjectsCard from '@/components/projectsCard/ProjectsCard';
+import ProjectsCard from '@/components/cardsUIs/projectsCard/ProjectsCard';
 import Resume from '@/components/resume/Resume'
 import RainThunder from '@/components/theme/RainThunder'
 import React from 'react'

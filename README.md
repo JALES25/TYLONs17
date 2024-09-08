@@ -49,4 +49,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
     -->
 
 
-    ![This is how the landing page looks like](image.png)
+    ![This is how the landing page looks like](/image.png)
+
+
+    Date: 07 Sept 24
+        Added Card components for the games and blogs dashboards also minor UI changes in the register & login pages. did some routing on the gamesbar so it actually does something when clicked 

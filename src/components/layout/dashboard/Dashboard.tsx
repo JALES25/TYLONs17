@@ -1,20 +1,39 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from 'react'
-import Link from 'next/link'
-
-import { AiOutlineLoading } from "react-icons/ai"
-
-import { FaBlogger, FaBloggerB } from "react-icons/fa" 
-import { useContext } from 'react'
-import { ThemeContext } from '../../../context/ThemeContext'
+import { ThemeContext } from '@/context/ThemeContext'
+import { useState, useContext } from 'react'
+import BlogsCard from '@/components/cardsUIs/blogsCard/BlogsCard'
+import GameCard from '@/components/cardsUIs/gamesCard/GamesCard'
+import MusicCard from '@/components/cardsUIs/musicCard/MusicCard'
 
 
 
-type DashboardItem = {
-  title: string
-  link: string
+interface BaseDashboardItem {
+  title: string;
+  link: string;
+  image: string;
+  date: string;
 }
+
+interface BlogItem extends BaseDashboardItem {
+  type: 'blog';
+  content: string;
+}
+
+interface GameItem extends BaseDashboardItem {
+  type: 'game';
+  videoSrc: string;
+  description: string;
+  reviews: string;
+  reviewCount: number;
+}
+
+interface MusicItem extends BaseDashboardItem {
+  type: 'music';
+}
+
+type DashboardItem = BlogItem | GameItem | MusicItem;
+
 
 type DashboardProps = {
   items: DashboardItem[]
@@ -23,78 +42,54 @@ type DashboardProps = {
 }
 
 export default function Dashboard({ items, title, className }: DashboardProps) {
-    //Search
-    const [searchTerm, setSearchTerm] = useState('')
+  // Existing logic for search, pagination, etc.
+  const [searchTerm, setSearchTerm] = useState('')
+  const filteredItems = items.filter(item =>
+    item.title.toLowerCase().includes(searchTerm.toLowerCase())
+  )
 
-    const filteredItems = items.filter(item =>
-        item.title.toLowerCase().includes(searchTerm.toLowerCase())
-    )
+  const [currentPage, setCurrentPage] = useState(1)
+  const postsPerPage = 7
+  const indexOfLastPost = currentPage * postsPerPage
+  const indexOfFirstPost = indexOfLastPost - postsPerPage
+  const currentPosts = filteredItems.slice(indexOfFirstPost, indexOfLastPost)
 
-    //Pagination
-    const [currentPage, setCurrentPage] = useState(1)
-    const postsPerPage = 6
+  const totalPages = Math.ceil(filteredItems.length / postsPerPage)
 
-    const indexOfLastPost = currentPage * postsPerPage
-    const indexOfFirstPost = indexOfLastPost - postsPerPage
-    const currentPosts = items.slice(indexOfFirstPost, indexOfLastPost)
-
-    const totalPages = Math.ceil(items.length / postsPerPage)
-
-    //Loading
-    const [loading, setLoading] = useState(true)
-    //TODO: fetch blog posts
-    useEffect(() => {
-      const timer = setTimeout(() => {
-        setLoading(false)
-      }, 1000)
-
-    // cleanup function to clear the timeout it the component unmounts before the timeout finishes
-    return () => clearTimeout(timer)
-    }, []) // Empty dependency array so this effect only runs once on mount
-
-    
-    
-
-
-    //Theme
-    const { state } = useContext(ThemeContext)
-    const isDarkMode = state.theme === "dark"
-    
+  const { state } = useContext(ThemeContext)
+  const isDarkMode = state.theme === 'dark'
 
   return (
-    <div className={`p-4 sm:p-6 md:p-8 lg:p-10 bg-gray-800 ${className}`}>
-      <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl">{title}</h1>
-      <input
-        type="text"
-        placeholder="Search..."
-        value={searchTerm}
-        onChange={e => setSearchTerm(e.target.value)}
-        className="mb-4 p-2 text-slate-200 bg-gray-500 w-full sm:w-1/2 md:w-1/3 lg:w-1/4"
-      />
-      {loading ? (
-        <AiOutlineLoading /> //TODO: Add loading spinner
-      ) : (
-        <div className="grid grid-rows-2 sm:grid-rows-1">
-          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {/* filteredItems */}
-            {currentPosts.map((item, index) => (
-              <li key={index} className="my-2 flex items-center">
-                {/* <img src="/path/to/icon.png" alt="icon" className="mr-2" /> */}
-                {isDarkMode ? <FaBloggerB className="mr-2" /> : <FaBlogger className="mr-2" />}
-                <Link href={item.link} legacyBehavior>
-                  <a className="text-white hover:text-blue-500" title={item.title}>{item.title}</a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>  
-      )}
-      <div className="bg-gray-500 rounded-lg w-20 p-1">
-        {Array.from({length: totalPages}, (_, i) => i + 1).map(page => (
+    <div className={`p-4 bg-gray-800 ${className}`}>
+      <h1 className="text-3xl text-center">{title}</ h1> 
+      <div className="py-2">
+        
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchTerm}
+          onChange={e => setSearchTerm(e.target.value)}
+          className="mb-4 p-2 text-slate-200 bg-gray-500 w-full text-center"
+        />
+        
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {currentPosts.map((item, index) => (
+          <div key={index}>
+            {/* Conditionally render based on type */}
+            {item.type === 'blog' && <BlogsCard title={item.title} date={item.date} image={item.image} content={item.content} link={item.link}  />}
+            {item.type === 'game' && <GameCard title={item.title} link={item.link} image={item.image} videoSrc={item.videoSrc} description={item.description} reviews={item.reviews} reviewCount={item.reviewCount} />}
+            {item.type === 'music' && <MusicCard title={item.title} link={item.link} />}
+          </div>
+        ))}
+      </div>
+      {/* Pagination buttons */}
+      <div className="flex space-x-2 mt-4">
+        {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
           <button
             key={page}
             onClick={() => setCurrentPage(page)}
-            className={`hover:bg-blue-500 hover:text-primary p-2 rounded-full ${page === currentPage ? 'active' : ''}`}
+            className={`p-2 rounded-full ${page === currentPage ? 'bg-blue-500 text-white' : 'bg-gray-500'}`}
           >
             {page}
           </button>
@@ -103,3 +98,4 @@ export default function Dashboard({ items, title, className }: DashboardProps) {
     </div>
   )
 }
+

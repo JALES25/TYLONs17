@@ -20,7 +20,7 @@ const gameIconNames: string[] = [
   'TbWorldSearch',
   'BsFillLightningFill',
   'FaPoo',
-  'BsGearFill',
+  'FaGamepad',
 ]
 
 
